@@ -18,7 +18,7 @@
     background-color: rgb(250, 116, 7);
     margin: 0;
     padding: 4px 2px;
-    border-top: 5px solid rgb(0, 0, 0);
+    /* border-top: 5px solid black; */
     border-bottom: 5px solid black;
 }
 

@@ -28,8 +28,8 @@ export const  orderCardRender = (order) => {
     </div>
     <div class="order-info">
         <div class="order-resep-info">
-            <div class="order-resep-info-item order-name"><b>Recipient's name:</b> <br>${order.name} </div>
-            <div class="order-resep-info-item order-address"><b>Delivery address:</b> <br> ${order.address}</div>
+            <div class="order-resep-info-item order-name"><b>Employee's name:</b> <br>${order.name} </div>
+            <div class="order-resep-info-item order-address"><b>Details:</b> <br> ${order.address}</div>
             <div class="order-status-container-${order._id}"></div>
         </div>
         
@@ -38,7 +38,7 @@ export const  orderCardRender = (order) => {
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accitem${order._id}" aria-expanded="false" aria-controls="accitem${order._id}">
-                    Order details
+                    Task details
                 </button>
             </h2>
             <div id="accitem${order._id}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion${order._id}">
@@ -54,13 +54,13 @@ export const  orderCardRender = (order) => {
         case status.innerText === 'pending':
             status.style.color = '#f39c12'; /* Оранжевий */
             break;
-        case status.innerText === 'shipped':
-            status.style.color = '#3498db'; /* Синій */
-            break;
+        // case status.innerText === 'shipped':
+        //     status.style.color = '#3498db'; 
+        //     break;
         case status.innerText === 'completed':
             status.style.color = '#2ecc71'; /* Зелений */
             break;
-        case status.innerText === 'canceled':
+        case status.innerText === 'rejected':
             status.style.color = '#e74c3c'; /* Червоний */
             break;
     }
@@ -75,9 +75,9 @@ export const  orderCardRender = (order) => {
             <div class="order-status-options">
                 <select class="form-select form-select-sm order-status-select-item-select" name="status" id="order-status-select-${order._id}">
                     <option value="pending">pending</option>
-                    <option value="shipped">shipped</option>
+                  
                     <option value="completed">completed</option>
-                    <option value="canceled">canceled</option>
+                    <option value="rejected">rejected</option>
                 </select>
                 <button class="btn btn-outline-primary btn-sm order-status-select-item-btm" id="orderStatusChange${order._id}">Apply</button>
             </div>
@@ -90,6 +90,9 @@ export const  orderCardRender = (order) => {
         document.getElementById(`order-status-select-${order._id}`).value = order.status;
     }
     
+    // <option value="shipped">shipped</option>
+
+
     // Заповнюємо акордеон (деталі орера)
     // Вибираємо акордеон
     const orderDetails = document.getElementById(`${order._id}-cart`);
@@ -109,9 +112,9 @@ export const  orderCardRender = (order) => {
     const orderPrice = order.cart.reduce((accumulator, item) => {
         return accumulator + item.count * item.product.price;
     }, 0);
-    totalCartPrice.innerHTML = `<div class="cart-order-price-label"> Order price:</div>
-                                <div class="cart-order-price-text"> ${orderPrice} &#x20b4</div>`
-    cartContainer.appendChild(totalCartPrice);
+    // totalCartPrice.innerHTML = `<div class="cart-order-price-label"> Order price:</div>
+    //                             <div class="cart-order-price-text"> ${orderPrice} &#x20b4</div>`
+    // cartContainer.appendChild(totalCartPrice);
   
 }
 
@@ -120,24 +123,27 @@ function orderCartItemRender(item, order) {
     const cartItem = document.createElement('div');
     cartItem.classList.add('order-cart-card');
     cartItem.innerHTML = `  <div class="cart-img-container">
-                                <div class="cart-product-category">
-                                    <div class="cart-product-category-text">${item.product.category.name}</div>
-                                </div>
+                               
                                 <div> <img src='${item.product.image}' class="cart-product-img"> </div>
                             </div>
 
                             <div class="cart-product-info order-details">
                                 <div class="cart-product-name">${item.product.name}</div>
-                                <div class="cart-product-material">${item.product.material}</div>
-                                <div class="cart-product-volume">${item.product.volume} ml</div>
-                                <div class="cart-product-price">${item.product.price} &#x20b4 / pc</div>
+                               
                             </div>
-
-                            <div class="cart-item-price">${item.count*item.product.price} &#x20b4
-                            </div>`;
+                            
+                            `;
     cartContainer.appendChild(cartItem);
 }
 
+{/* <div class="cart-item-price">${item.count*item.product.price} &#x20b4
+                            </div>
+<div class="cart-product-material">${item.product.descri}</div>
+<div class="cart-product-volume">${item.product.volume} ml</div>
+<div class="cart-product-price">${item.product.price} &#x20b4 / pc</div> */}
+{/* <div class="cart-product-category">
+<div class="cart-product-category-text">${item.product.category.name}</div>
+</div> */}
 async function orderStatusChange(id) {
     const reqBody = {
         status: document.getElementById(`order-status-select-${id}`).value

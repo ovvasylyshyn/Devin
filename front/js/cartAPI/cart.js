@@ -62,20 +62,20 @@ export const cartRender =  () => {
             const orderPrice = user.cart.reduce((accumulator, item) => {
                 return accumulator + item.count * item.product.price;
             }, 0);
-            totalCartPrice.innerHTML = `<div class="cart-order-price-label"> Order price:</div>
-                                        <div class="cart-order-price-text"> ${orderPrice} &#x20b4</div>`
-            cartContainer.appendChild(totalCartPrice);
+            // totalCartPrice.innerHTML = `<div class="cart-order-price-label"> Order price:</div>
+            //                             <div class="cart-order-price-text"> ${orderPrice} &#x20b4</div>`
+            // cartContainer.appendChild(totalCartPrice);
 
             // Кнопка оформлення замовлення
             const orderButton = document.createElement('div');
             orderButton.classList.add('cart-order-button-container');
-            orderButton.innerHTML = `<button class="btn btn-secondary" id="orderCompleteBtn">Complete the order</button>`;
+            orderButton.innerHTML = `<button class="btn btn-secondary" id="orderCompleteBtn">Change status</button>`;
             cartContainer.appendChild(orderButton);
             attachEventHandler('orderCompleteBtn', 'click', () => { orderModal.open() })
         } else {
             const emptyCartMsg = document.createElement('div');
             emptyCartMsg.classList.add('cart-empty-message');
-            emptyCartMsg.innerHTML = `<button class="btn btn-secondary" id="orderGoShopingBtn">Cart is empty. Go shopping ...</button>`;
+            emptyCartMsg.innerHTML = `<button class="btn btn-secondary" id="orderGoShopingBtn">Cart is empty. Choose task.</button>`;
             cartContainer.appendChild(emptyCartMsg);
             attachEventHandler('orderGoShopingBtn', 'click', () => { getAndShowAllProducts() })
         }

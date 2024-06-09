@@ -10,7 +10,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid #6db5f8;
+    border: 3px solid rgb(250, 116, 7);
     padding: 10px;
     margin-top: 60px;
     border-radius: 5px;
@@ -29,13 +29,13 @@
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 30px 10px 10px;
+    margin: 10px 10px 10px;
     caret-color: transparent;
 }
 
 .order-resep-info-item {
     line-height: 1.1rem;
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     max-width: 270px;
     margin: 7px 10px;
 
@@ -46,13 +46,13 @@
 }
 
 .order-id {
-    border: 1px solid #6db5f8;
-    background-color: rgb(236, 236, 236);
+    border: 3px solid #000000;
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     position: absolute;
     top: -1.5rem; 
     left: 10px;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     padding: 0 10px;
     display: flex;
     flex-direction: row;
@@ -65,13 +65,13 @@
 .order-id-item{
     line-height: 1rem;
     text-align: center;
-    color: cornflowerblue;
+    color: rgb(0, 0, 0);
     margin: 0 10px;
     
 }
 .order-status-text{
-    background-color: white;
-    border: 1px solid grey;
+    background-color: rgba(0, 0, 0, 0.055);
+    border: 1px solid rgba(0, 0, 0, 0.055);
     display: inline-block;
     margin: 2px 0;
     padding: 0 5px;
@@ -117,7 +117,7 @@
 }
 
 .order-cart-card {
-    margin: 0;
+    margin-top: 5px;
     padding: 0;
     display: flex;
     flex-direction: row;
@@ -125,7 +125,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(205, 205, 207, 0.75);
+    border: 1px solid rgb(250, 116, 7);
     border-radius: 5px;
 }
 
@@ -136,4 +136,29 @@
 /* Перевизначаємо параметри bootstrap */
 .accordion-button {
     padding: 0.2rem 1rem;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(250, 116, 7);
 }
+.order-status-select-item-btm{
+    color: black;
+    font-weight: bold;
+    border: 1px solid rgb(250, 116, 7);
+}
+.order-status-select-item-btm:hover{
+    color: black;
+    font-weight: bold;
+    background-color: rgb(250, 116, 7);
+    border: 1px solid rgb(250, 116, 7);
+}
+.order-status-select-item-select{
+    color: black;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(250, 116, 7);
+}
+/* .order-status-select-item-select:hover{
+    color: black;
+    font-weight: bold;
+    background-color: rgb(250, 116, 7);
+    border: 1px solid rgb(250, 116, 7);
+} */

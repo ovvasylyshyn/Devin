@@ -59,3 +59,101 @@ body {
     text-align: center;
 }
 
+.info-container {
+    position: relative;
+    top: 60px;
+    height: auto;
+    width: 100%;
+    border: 1px solid rgb(250, 116, 7);
+    border-top: 2px solid black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/front/img/co.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    font-size: 50px;
+    font-family: "Tiny5", sans-serif;
+}
+
+.p {
+    border-top: 2px solid rgb(250, 116, 7);
+    margin-top: 20px;
+    padding: 10px;
+    width: 80%;
+    max-width: 1000px;
+    z-index: 2;
+    color: white;
+    font-size: 30px;
+    text-align: justify;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .h1 {
+        font-size: 40px;
+    }
+
+    .p {
+        font-size: 25px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    .h1 {
+        font-size: 35px;
+    }
+
+    .p {
+        font-size: 22px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-container {
+        padding: 20px;
+    }
+
+    .h1 {
+        font-size: 30px;
+    }
+
+    .p {
+        font-size: 20px;
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .h1 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .p {
+        font-size: 18px;
+        width: 90%;
+        margin-top: 10px;
+    }
+}

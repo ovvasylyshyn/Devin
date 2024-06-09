@@ -90,8 +90,8 @@ export const renderOrders = async () => {
             else {
                 dataContainer.innerHTML = `<div class="empy-errors">
                     <div class="empy-errors-item">No orders found yet. </div>
-                    <div class="empy-errors-item">Visit the store and buy some products.</div>
-                    <button class="btn btn-secondary" id="emptyOrderBtn" >Go shopping ...</button>
+                    <div class="empy-errors-item">Visit the store and choose some tasks.</div>
+                    <button class="btn btn-secondary" id="emptyOrderBtn" >Choose task.</button>
                 </div>`;
                 attachEventHandler('emptyOrderBtn', 'click', () => { getAndShowAllProducts() })
             }
