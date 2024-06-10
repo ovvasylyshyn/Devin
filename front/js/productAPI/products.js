@@ -68,9 +68,9 @@ export const getAndShowAllProducts = async () => {
             }
             else {
                 dataContainer.innerHTML = `<div class="empy-errors">
-                    <div class="empy-errors-item">No products found </div>
+                    <div class="empy-errors-item">No tasks found </div>
                     <!-- <div class="empy-errors-item">First - create some category,</div>
-                    <div class="empy-errors-item">then you'll be able to create products.</div> -->
+                    <div class="empy-errors-item">then you'll be able to create tasks.</div> -->
                 </div>`
             }
            
@@ -85,58 +85,57 @@ export const getAndShowAllProducts = async () => {
 
 
 
-// export const editProduct = (product) => {
-//     convertModalToEdit();
-//     renderProductCategoriesOptions();
-//     // Шукаємо, яка прийшла категорія, і вибираємо її
-//     const categoryListBox = document.querySelector('#producCategory');
-//     const options = Array.from(categoryListBox.options);
-//     const optionToSelect = options.find(item => item.text === product.category.name);
-//     optionToSelect.selected = true;
-//     document.getElementById('productId').value = product._id;
-//     document.getElementById('productName').value = product.name;
-//     document.getElementById('productDescription').value = product.description;
-//     document.getElementById('productPriority').value = product.priority;
-//     document.getElementById('productDueDate').value = product.dueDate;
-//     document.getElementById('productAssignedEmployee').value = product.assignedEmployee;
-//     document.getElementById('formImage').setAttribute("src", product.image) ;
-//     document.getElementById('oldCloudinaryPublicId').value = product.cloud;
-//     document.getElementById('oldImagePath').value = product.image;
-//     productModal.open();
-// }
-
-
 export const editProduct = (product) => {
     convertModalToEdit();
     renderProductCategoriesOptions();
-    
-    // Ensure the category list box exists
+    // Шукаємо, яка прийшла категорія, і вибираємо її
     const categoryListBox = document.querySelector('#productCategory');
-    if (!categoryListBox) {
-        console.error("Category list box element not found");
-        return;
-    }
-
-    // Ensure options are available
     const options = Array.from(categoryListBox.options);
     const optionToSelect = options.find(item => item.text === product.category.name);
-    if (optionToSelect) {
-        optionToSelect.selected = true;
-    } else {
-        console.error("Category option not found");
-    }
-
+    optionToSelect.selected = true;
     document.getElementById('productId').value = product._id;
     document.getElementById('productName').value = product.name;
     document.getElementById('productDescription').value = product.description;
     document.getElementById('productPriority').value = product.priority;
     document.getElementById('productDueDate').value = product.dueDate;
     document.getElementById('productAssignedEmployee').value = product.assignedEmployee;
-    document.getElementById('formImage').setAttribute("src", product.image);
+    document.getElementById('formImage').setAttribute("src", product.image) ;
     document.getElementById('oldCloudinaryPublicId').value = product.cloud;
     document.getElementById('oldImagePath').value = product.image;
     productModal.open();
 }
+
+// export const editProduct = (product) => {
+//     convertModalToEdit();
+//     renderProductCategoriesOptions();
+    
+//     // Ensure the category list box exists
+//     const categoryListBox = document.querySelector('#productCategory');
+//     if (!categoryListBox) {
+//         console.error("Category list box element not found");
+//         return;
+//     }
+
+//     // Ensure options are available
+//     const options = Array.from(categoryListBox.options);
+//     const optionToSelect = options.find(item => item.text === product.category.name);
+//     if (optionToSelect) {
+//         optionToSelect.selected = true;
+//     } else {
+//         console.error("Category option not found");
+//     }
+
+//     document.getElementById('productId').value = product._id;
+//     document.getElementById('productName').value = product.name;
+//     document.getElementById('productDescription').value = product.description;
+//     document.getElementById('productPriority').value = product.priority;
+//     document.getElementById('productDueDate').value = product.dueDate;
+//     document.getElementById('productAssignedEmployee').value = product.assignedEmployee;
+//     document.getElementById('formImage').setAttribute("src", product.image);
+//     document.getElementById('oldCloudinaryPublicId').value = product.cloud;
+//     document.getElementById('oldImagePath').value = product.image;
+//     productModal.open();
+// }
 
 
 

@@ -5,7 +5,7 @@
     flex-direction: column;
     /* background-color: rgb(206, 225, 241); */
     width: 230px;
-    height: 200px;
+    height: 220px;
     /* margin:0%; */
     text-align: center;
     border: 2px solid rgb(206, 225, 241);
@@ -111,7 +111,9 @@ text-align: left;
     text-align: center;
     font-weight: bold;
 }
-
+/* .fa-exchange-cart:hover{
+    color: aqua;
+} */
 
 
 /* .product-data {

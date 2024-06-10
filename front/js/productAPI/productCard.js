@@ -71,7 +71,7 @@ export const productCardRender = (product) => {
                                     <div class="product-footer">
                                         
                                         <div class="product-manage-btns">
-                                         <div class="fa fa-shopping-cart product-cart-btn" id="addToCart${product._id}"> </div>
+                                         <div class="fa fa-check-circle product-cart-btn" id="addToCart${product._id}"> </div>
                                         </div> 
                                     </div>`;
 
@@ -81,7 +81,7 @@ export const productCardRender = (product) => {
                                     <div class="product-footer">
                                                                           
                                         <div class="product-manage-btns">
-                                            <div class="fa fa-shopping-cart product-cart-btn" id='popUp${product._id}' > </div>
+                                            <div class="fa fa-check-circle product-cart-btn" id='popUp${product._id}' > </div>
                                         </div> 
                                     </div>`;
     // Перевіряємо стан авторизації

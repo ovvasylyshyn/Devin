@@ -205,6 +205,26 @@ const productModalFooter =``;
 export const productModal = new CustomModal('prd', productModalTitle, productModalContent, productModalFooter);
 productModal.create();
 
+
+document.getElementById("productForm").addEventListener("submit", function(event) {
+    // Отримання значення дати з поля введення
+    var inputDate = new Date(document.getElementById("productDueDate").value);
+    
+    // Отримання сьогоднішньої дати
+    var today = new Date();
+    today.setHours(0, 0, 0, 0); // Обнулення годин, хвилин, секунд та мілісекунд
+
+    // Перевірка, чи введена дата не менша за сьогоднішню
+    if (inputDate < today) {
+        // Стоп за подію за замовчуванням (відправку форми)
+        event.preventDefault();
+        // Виведення повідомлення про помилку
+        alert("Ви ввели неправильну дату. Будь ласка, введіть коректну дату.");
+    }
+});
+
+
+
 export const convertModalToCreate = () => {
     document.getElementById('title-prd').innerText = "Create product";
     document.getElementById('submitProductBtn').innerText = "Create";
@@ -244,7 +264,7 @@ export const renderProductCategoriesOptions = () => {
     defaultProductCategoryOption.setAttribute("disabled", "");
     defaultProductCategoryOption.setAttribute("selected", "");
     defaultProductCategoryOption.setAttribute("value", "");
-    defaultProductCategoryOption.innerText = ` -- select a category -- `;
+    defaultProductCategoryOption.innerText = `select a category`;
     productCategory.appendChild(defaultProductCategoryOption);
     
     // Вибираємо категорії товарів з LS

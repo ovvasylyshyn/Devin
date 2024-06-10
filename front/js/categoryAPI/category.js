@@ -13,7 +13,7 @@ export const categoryRender = async () => {
     const btnContainer = document.querySelector(".btn-container");
     // Очищуємо контейнер кнопок
     btnContainer.innerHTML = ``;
-    btnContainer.innerHTML = `<button type="button" class="btn btn-secondary" id="createCtgBtn" >Create New Category of Products</button>`;
+    btnContainer.innerHTML = `<button type="button" class="btn btn-secondary" id="createCtgBtn" >Create New Category</button>`;
     attachEventHandler('createCtgBtn', 'click', () => { createCatgoryModal.open()} );
     // Очищуємо контейнер даних
     const dataContainer = document.querySelector(".data-container");
@@ -38,7 +38,7 @@ export const categoryRender = async () => {
         categoryCard.classList.add("empy-errors");
         categoryCard.innerHTML = `<div class="empy-errors-item">No categories found yet. </div>
                                   <div class="empy-errors-item">Create some category,</div>
-                                  <div class="empy-errors-item">then create products.</div>`;
+                                  <div class="empy-errors-item">then create tasks.</div>`;
         categoryContainer.appendChild(categoryCard); 
     }
 }
@@ -127,8 +127,8 @@ export const getAllCategoriesFromDB = async () => {
 export const removeCategory = async (category) => {
     const msg = document.getElementsByClassName('confirmation-message')[0];
     msg.innerHTML = `Are you sure you want to remove category <b>${category.name}</b>? </br>
-    <b>ALL PRODUCTS</b> of this category will also be <b>REMOVED</b>.</br>
-    You can change the category in the products before removing the category..`
+    <b>ALL TASKS</b> of this category will also be <b>REMOVED</b>.</br>
+    You can change the category in the task before removing the category..`
     
     return new Promise ( async (resolve, reject) => {
         try {

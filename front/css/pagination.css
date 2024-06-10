@@ -11,15 +11,16 @@
 
 .page-link {
     /* color: #6c757d; */
-    color: yellow;
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
 .page-link:hover {
-    color: #6c757d;
+    color: #ffffff;
+    background-color: rgb(250, 116, 7);
 }
 
 .page-item.active .page-link {
-    background-color: #6c757d;
-    border-color: #6c757d;
+    background-color:  rgb(250, 116, 7);
+    border-color: #000000;
 }
