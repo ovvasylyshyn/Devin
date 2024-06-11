@@ -142,7 +142,7 @@ const productModalContent = `<form name="productForm" id="productForm" enctype="
     <input type="hidden" name="productId" id="productId">
     <input type="hidden" name="oldCloudinaryPublicId" id="oldCloudinaryPublicId">
     <input type="hidden" name="oldImagePath" id="oldImagePath">
-    <table class="form-table">
+    <table class="form-table pr">
         <tr>
             <td class="form-label"><label for="productCategory">Category:</label> </td>
             <td class="form-input">

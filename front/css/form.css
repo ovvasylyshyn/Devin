@@ -13,8 +13,12 @@
 
 .form-table {
     margin: 0 auto;
+    
 }
-
+.pr{
+    height: 400px;
+    background-color: black;
+}
 .form-image-container{
     text-align: center;
     height: 152px;
