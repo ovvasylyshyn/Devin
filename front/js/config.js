@@ -2,7 +2,7 @@ import { renderFilterCategoriesOptions } from "./filter.js";
 import { renderProductCategoriesOptions } from "./modals/productModal.js";
 ///
 /// ***** Ендпойнт бекенду та робота з localStorage *****
-///
+///iohihihi
 // const backURL = `https://cups-store.onrender.com`;
 // Змінити backURL на `http://localhost:4000` при запуску на локальному сервері;
 export const backURL = `https://devin.onrender.com`;
