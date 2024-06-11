@@ -23,7 +23,7 @@ app.use(cors({
     credentials: true
   }));
   app.use(express.static(path.join(__dirname, '../front')));
-// Підключення роутера
+// Підключення роу,тера
 app.use(router);
 
 const startServer = async () => {
