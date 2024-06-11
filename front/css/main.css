@@ -468,16 +468,19 @@ footer {
 .section-content {
     color: #000000;
     background-color: #f0ece53d;
+
     /* display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center; */
     gap: 5px;
     width: 100%;
-    padding: 5px 0;
+    /* padding: 5px 0; */
     border-radius: 0 0 8px 8px;
 }
-
+.gradient{
+    background: linear-gradient(to right, blue, orange);
+}
 .partners-content {
     display: flex;
     margin-top: 15px;
